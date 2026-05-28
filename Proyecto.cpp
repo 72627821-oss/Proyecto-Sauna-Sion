@@ -208,3 +208,63 @@ void atenderCliente() {
     delete aux;
 }
 
+int main() {
+
+    int opcion;
+
+    do {
+
+        cout << "\n========== SAUNA SION DE SOL DE ORO ==========\n";
+        cout << "1. Registrar cliente\n";
+        cout << "2. Mostrar clientes\n";
+        cout << "3. Buscar cliente\n";
+        cout << "4. Eliminar cliente\n";
+        cout << "5. Ingresar cliente a cola\n";
+        cout << "6. Atender cliente\n";
+        cout << "7. Salir\n"<<endl;
+       
+       
+
+        cout << "Seleccione opcion: ";
+        cin >> opcion;
+
+        switch(opcion) {
+
+            case 1:
+                registrarCliente();
+                break;
+
+            case 2:
+                mostrarClientes();
+                break;
+
+            case 3:
+                buscarCliente();
+                break;
+
+            case 4:
+                eliminarCliente();
+                break;
+
+            case 5:
+                ingresarCola();
+                break;
+
+            case 6:
+                atenderCliente();
+                break;
+
+        
+
+            case 7:
+                cout << "\nSaliendo del sistema...\n";
+                break;
+
+            default:
+                cout << "\nOpcion invalida.\n";
+        }
+
+    } while(opcion != 0);
+
+    return 0;
+}
