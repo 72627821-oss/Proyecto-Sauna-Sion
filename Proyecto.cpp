@@ -83,3 +83,71 @@ void mostrarClientes() {
         aux = aux->siguiente;
     }
 }
+
+// Buscar cliente
+void buscarCliente() {
+
+    int idBuscar;
+    bool encontrado = false;
+
+    cout << "\nIngrese ID del cliente: ";
+    cin >> idBuscar;
+
+    Cliente* aux = lista;
+
+    while(aux != NULL) {
+
+        if(aux->id == idBuscar) {
+
+            cout << "\nCliente encontrado\n";
+            cout << "Nombre: " << aux->nombre << endl;
+            cout << "Servicio: " << aux->servicio << endl;
+            cout << "Prioridad: " << aux->prioridad << endl;
+
+            encontrado = true;
+        }
+
+        aux = aux->siguiente;
+    }
+
+    if(!encontrado) {
+        cout << "Cliente no encontrado.\n";
+    }
+}
+
+// Eliminar cliente
+void eliminarCliente() {
+
+    int idEliminar;
+
+    cout << "\nIngrese ID del cliente a eliminar: ";
+    cin >> idEliminar;
+
+    Cliente* aux = lista;
+    Cliente* anterior = NULL;
+
+    while(aux != NULL && aux->id != idEliminar) {
+
+        anterior = aux;
+        aux = aux->siguiente;
+    }
+
+    if(aux == NULL) {
+
+        cout << "Cliente no encontrado.\n";
+        return;
+    }
+
+    if(anterior == NULL) {
+
+        lista = aux->siguiente;
+
+    } else {
+
+        anterior->siguiente = aux->siguiente;
+    }
+
+    delete aux;
+
+    cout << "Cliente eliminado correctamente.\n";
+}
