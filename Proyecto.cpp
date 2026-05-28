@@ -33,7 +33,7 @@ void registrarCliente() {
     cout << "Ingrese nombre: ";
     getline(cin, nuevo->nombre);
 
-    cout << "Ingrese servicio solicitado: ";
+    cout << "Ingrese servicio solicitado(Basico/Sauna/Vip): ";
     getline(cin, nuevo->servicio);
 
     cout << "Ingrese prioridad (1-5): ";
