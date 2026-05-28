@@ -190,3 +190,21 @@ void ingresarCola() {
 
     cout << "Cliente agregado a la cola.\n";
 }
+// Atender cliente
+void atenderCliente() {
+
+    if(frente == NULL) {
+
+        cout << "\nNo hay clientes en espera.\n";
+        return;
+    }
+
+    NodoCola* aux = frente;
+
+    cout << "\nAtendiendo a: " << aux->nombre << endl;
+
+    frente = frente->siguiente;
+
+    delete aux;
+}
+
