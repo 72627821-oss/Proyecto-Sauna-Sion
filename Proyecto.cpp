@@ -151,3 +151,42 @@ void eliminarCliente() {
 
     cout << "Cliente eliminado correctamente.\n";
 }
+/*==========================
+        COLA
+   ATENCION DE CLIENTES
+===========================*/
+
+struct NodoCola {
+
+    string nombre;
+    NodoCola* siguiente;
+};
+
+NodoCola* frente = NULL;
+NodoCola* finCola = NULL;
+
+// Encolar cliente
+void ingresarCola() {
+
+    NodoCola* nuevo = new NodoCola();
+
+    cin.ignore();
+
+    cout << "\nIngrese nombre del cliente: ";
+    getline(cin, nuevo->nombre);
+
+    nuevo->siguiente = NULL;
+
+    if(frente == NULL) {
+
+        frente = nuevo;
+        finCola = nuevo;
+
+    } else {
+
+        finCola->siguiente = nuevo;
+        finCola = nuevo;
+    }
+
+    cout << "Cliente agregado a la cola.\n";
+}
